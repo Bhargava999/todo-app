@@ -1,38 +1,249 @@
-.App {
-  text-align: center;
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+  
+:root {
+  /* Primary */
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+ --header-color: hsl(0, 0%, 98%);
+  /* Font */
+  --light-font: 400;
+  --bold-font: 700;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark {
+    background-image: url('./images/bg-desktop-dark.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 100vh;
+  --todos-color: hsl(235, 24%, 19%);
+  --nav-text-color: hsl(236, 33%, 92%);
+    background-color: hsl(235, 21%, 11%);
+  --todo-font-color: hsl(234, 39%, 85%);
+  --todo-font-hover-color: hsl(236, 33%, 92%);
+  --other-text-color:   hsl(233, 14%, 35%);
+  --border-color: hsl(237, 14%, 26%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.light {
+  background-image: url('./images/bg-desktop-light.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 100vh;
+   background-color: hsl(0, 0%, 98%);
+  --nav-text-color: hsl(236, 33%, 92%);
+  --todos-color: hsl(0, 0%, 98%);
+  --todo-font-color: hsl(235, 19%, 35%);
+  --todo-font-hover-color: hsl(235, 24%, 19%);
+  --other-text-color: hsl(233, 11%, 84%);
+   --border-color: hsl(236, 33%, 92%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  font-size: 14px;
+  background-color: var(--app-background-color);
+}
+ul{
+    list-style-type: none;
+}
+
+[type="text"]{
+    width: 100%;
+    border: none;
+    outline: 0;
+    color: var(--todo-font-color);
+    background-color: var(--todos-color);
+}
+
+[name="category-type"]{
+  display: none;
+}
+
+[name="category-type"]:hover+.category-btn{
+  cursor: pointer;
+  color: var(--bright-blue);
+}
+
+[name="category-type"]:checked+.category-btn{
+  color: var(--bright-blue);
+}
+ 
+
+span{
+  font-weight: 400;
+  justify-self: flex-start;
+}
+
+.app{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--header-color);
+    margin: 3rem auto 3rem auto;
+}
+
+
+.form-controll{
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  width: 100%;
+  gap: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  background-color:var(--todos-color);
+}
+
+.circle{
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--other-text-color);
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--todos-color);
+}
+
+.checked{
+  border-color: var(--todo-font-hover-color);
+  cursor: pointer;
+  background: var(--check-background);
+}
+
+.cross-icon{
+  color: var(--check-background);
+}
+.list{
+    background:var(--todos-color);
+    border-radius: 0.3rem;
+    box-shadow: 0 0 20px var(--border-color);
+}
+.list-item{
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  gap: 0.5rem;
+  color: var(--todo-font-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.strike{
+  text-decoration: line-through;
+  color: var(--other-text-color);
+}
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+   color: var(--todo-font-color);
+}
+
+.flex-start {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.flex-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.list-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background-color: var(--todos-color);
+  color: var(--todo-font-color);
+}
+.category{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: .8rem;
+  color: var(--todo-font-color);
 }
 
-.App-link {
-  color: #61dafb;
+.btn{
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 400;
+  border: none;
+  color: var(--todo-font-color);
+}
+.attribution {
+   font-size: .8rem; 
+  text-align: center;
+  color: var(--todo-font-color);
+ }
+.attribution a { 
+  color: var(--bright-blue)
+ }
+
+
+@media(max-width:992px){
+  .container{
+    width: 70%;
+  }
+  .header{
+    margin: 3rem auto 1.5rem auto;
+  }
+}
+@media(max-width:768px){
+  .container{
+    width: 80%;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 600px) {
+  .light{
+    background-image: url(./images/bg-mobile-light.jpg);
   }
-  to {
-    transform: rotate(360deg);
+  .dark{
+    background-image: url(./images/bg-mobile-dark.jpg);
   }
+  .circle{
+    width: 15px;
+    height: 15px;
+   
+}
+.list,[type="text"],.list-footer{
+   font-size: 0.5rem;
+}
+
 }
