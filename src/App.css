@@ -90,8 +90,6 @@ span{
 .app{
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .container{
@@ -104,7 +102,7 @@ span{
     justify-content: space-between;
     align-items: center;
     color: var(--header-color);
-    margin: 3rem auto 3rem auto;
+    margin: 6rem auto 3rem auto;
 }
 
 
@@ -206,15 +204,6 @@ span{
   border: none;
   color: var(--todo-font-color);
 }
-.attribution {
-   font-size: .8rem; 
-  text-align: center;
-  color: var(--todo-font-color);
- }
-.attribution a { 
-  color: var(--bright-blue)
- }
-
 
 @media(max-width:992px){
   .container{

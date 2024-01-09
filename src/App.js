@@ -66,19 +66,6 @@ function App() {
           onClear={handleClear}
         />
       </div>
-      {
-        <div class="attribution">
-          Challenge by{" "}
-          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-            Frontend Mentor
-          </a>
-          . Coded by{" "}
-          <a href="https://www.linkedin.com/in/bhargava-manikanta-mamidisetti-1022a3222/">
-            Bhargava Manikanta
-          </a>
-          .
-        </div>
-      }
     </main>
   );
 }
