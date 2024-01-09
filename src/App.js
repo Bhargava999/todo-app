@@ -11,7 +11,7 @@ const todos = [
   { id: 2, title: "10 minutes meditation", completed: false },
   { id: 3, title: "Read for 1 hour", completed: false },
   { id: 4, title: "Pick up groceries", completed: false },
-  { id: 5, title: "Complete Todo App on FrontEnd Mentor", completed: true },
+  { id: 5, title: "Complete Todo App on FrontEnd Mentor", completed: false },
 ];
 
 function App() {
@@ -85,11 +85,11 @@ function App() {
 
 function Form({ onAddTodo }) {
   const [description, setDescription] = useState("");
-
+  const id = crypto.randomUUID();
   function handleSubmit(e) {
     e.preventDefault();
     if (!description) return;
-    const newTodo = { title: description, id: Date.now, completed: false };
+    const newTodo = { title: description, id: id, completed: false };
     onAddTodo(newTodo);
     setDescription("");
   }
